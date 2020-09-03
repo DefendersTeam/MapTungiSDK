@@ -109,7 +109,10 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-    spec.resources = "MapTungiSDK/images/*.png"
+  spec.resource_bundles = {
+    'MapTungiSDK' => ['MapTungiSDK/**/*.{xib,json,png,html}']
+  }
+  # spec.resources = "MapTungiSDK/images/*.png"
   # spec.resources = "SMCoreLib/Assets/*.xcassets"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
