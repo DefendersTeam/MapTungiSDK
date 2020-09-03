@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "MapTungiSDK"
-  spec.version      = "0.0.4"
+  spec.version      = "0.0.5"
   spec.summary      = "To integarte Map Tungi SDK with Club Mahindra App."
 
   # This description is used to generate tags and improve search results.
@@ -94,7 +94,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "MapTungiSDK/**/*.{h,m,swift,json,html,xib}"
+  spec.source_files  = "MapTungiSDK/**/*.{h,m,swift}"
   #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
