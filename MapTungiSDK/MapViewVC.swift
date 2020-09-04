@@ -34,7 +34,7 @@ public class MapViewVC: ParentViewController, UIScrollViewDelegate {
    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        MapViewVC.resortID = 19
         let defaults = UserDefaults.standard
         versionNo = defaults.integer(forKey: "version")
         createFolderInDocumentDirectory()
@@ -249,7 +249,7 @@ public class MapViewVC: ParentViewController, UIScrollViewDelegate {
         btnOrientation.addTarget(self, action: #selector(actionOrientationTapped), for: .touchUpInside)
         btnOrientation.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnOrientation)
-        btnOrientation.bringSubview(toFront:imageView)
+        btnOrientation.bringSubview(toFront: imageView)
         btnOrientation.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
         btnOrientation.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16).isActive = true
         btnOrientation.widthAnchor.constraint(equalToConstant: 50).isActive = true
@@ -265,7 +265,7 @@ public class MapViewVC: ParentViewController, UIScrollViewDelegate {
         btnBack.addTarget(self, action: #selector(actionbackTapped), for: .touchUpInside)
         btnBack.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnBack)
-        btnBack.bringSubview(toFront:imageView)
+        btnBack.bringSubview(toFront: imageView)
         btnBack.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
         btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50).isActive = true
         btnBack.widthAnchor.constraint(equalToConstant: 40).isActive = true
@@ -288,7 +288,7 @@ public class MapViewVC: ParentViewController, UIScrollViewDelegate {
         btnToggle.addTarget(self, action: #selector(actionToggleTapped), for: .touchUpInside)
         btnToggle.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnToggle)
-        btnToggle.bringSubview(toFront:imageView)
+        btnToggle.bringSubview(toFront: imageView)
         btnToggle.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
         btnToggle.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -82).isActive = true
         btnToggle.widthAnchor.constraint(equalToConstant: 50).isActive = true

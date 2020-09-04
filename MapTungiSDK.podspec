@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "MapTungiSDK"
-  spec.version      = "0.0.5"
+  spec.version      = "0.0.6"
   spec.summary      = "To integarte Map Tungi SDK with Club Mahindra App."
 
   # This description is used to generate tags and improve search results.
@@ -94,7 +94,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "MapTungiSDK/**/*.{h,m,swift}"
+  spec.source_files  = "MapTungiSDK/**/*.{h,m,swift,xib}"
   #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -110,11 +110,9 @@ Pod::Spec.new do |spec|
 
   # spec.resource  = "icon.png"
   spec.resource_bundles = {
-    'MapTungiSDK' => ['MapTungiSDK/**/*.{xib,json,png,html}']
+    'MapTungiSDK' => ['MapTungiSDK/**/*.{json,png,html}']
   }
-  # spec.resources = "MapTungiSDK/images/*.png"
-  # spec.resources = "SMCoreLib/Assets/*.xcassets"
-
+  #  spec.resources = "MapTungiSDK/images/*.png"
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
