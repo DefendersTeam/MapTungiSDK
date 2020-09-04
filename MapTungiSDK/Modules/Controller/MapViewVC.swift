@@ -34,7 +34,7 @@ public class MapViewVC: ParentViewController, UIScrollViewDelegate {
    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        MapViewVC.resortID = 19
+        self.view.backgroundColor = UIColor.white
         let defaults = UserDefaults.standard
         versionNo = defaults.integer(forKey: "version")
         createFolderInDocumentDirectory()
