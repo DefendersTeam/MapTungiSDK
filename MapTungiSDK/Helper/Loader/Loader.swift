@@ -29,9 +29,10 @@ class Loader: UIView {
         contentView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
     }
     func startAnimating() {
+        let bundle = Bundle(for: Loader.self)
         let webview = WKWebView()
         webview.frame  = CGRect(x: 0, y: 0, width: progressBar.frame.size.width, height: progressBar.frame.size.height)
-        webview.load(URLRequest(url: Bundle.main.url(forResource: "index", withExtension:"html")! as URL) as URLRequest)
+        webview.load(URLRequest(url: bundle.url(forResource: "index", withExtension:"html")! as URL) as URLRequest)
         progressBar.addSubview(webview)
     }
     

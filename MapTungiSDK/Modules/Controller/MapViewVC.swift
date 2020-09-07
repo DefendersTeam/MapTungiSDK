@@ -362,9 +362,9 @@ public class MapViewVC: ParentViewController, UIScrollViewDelegate {
             getTitleAssest(item: animationAssets.title![i], index:i)
         }
         
-        for i in 0..<animationAssets.pivot!.count {
-            setPivotAssest(item: animationAssets.pivot![i])
-        }
+//        for i in 0..<animationAssets.pivot!.count {
+//            setPivotAssest(item: animationAssets.pivot![i])
+//        }
     }
     
     //To get the static assests from the document directory and constructing array of image
@@ -433,11 +433,14 @@ public class MapViewVC: ParentViewController, UIScrollViewDelegate {
     func getTitleAssest (item: Title, index:Int){
             arrTitle = []
             var documentsURL = self.getDirectoryPath()
-        documentsURL = documentsURL.appendingPathComponent("static_assets_19/Static_BG/\(item.name ?? "")")
-            
+            if item.value == 0 {
+                documentsURL = documentsURL.appendingPathComponent("static_assets_19/Static_BG/Green Labels/\(item.name ?? "")" + ".png")
+            }else{
+                documentsURL = documentsURL.appendingPathComponent("static_assets_19/Static_BG/Orange Labels/\(item.name ?? "")" + ".png")
+            }            
             do {
-                let url = documentsURL.appendingPathComponent("\(item.name ?? "")" + "_" + "\(index+1)" + ".png")
-                let imageURL = URL(fileURLWithPath: url.absoluteString)
+                //let url = documentsURL.appendingPathComponent("\(item.name ?? "")" + ".png")
+                let imageURL = URL(fileURLWithPath: documentsURL.path)
                 let image = UIImage(data: try Foundation.Data(contentsOf: imageURL))
                 arrTitle.append(image!)
                 setUpTitleAssests(item:item)
@@ -589,7 +592,12 @@ public class MapViewVC: ParentViewController, UIScrollViewDelegate {
         if ((self.pivotResponse?.data?.pivotPoints) != nil) {
             let filterArray = self.pivotResponse!.data?.pivotPoints!.filter() { $0.pivotId == String(sender.tag) }
             if filterArray!.count > 0 {
-                captionView = customPopup(frame: CGRect(x: sender.frame.origin.x-140, y: sender.frame.origin.y-170, width: 380, height: 200))
+                if sender.tag == 2 {
+                    captionView = customPopup(frame: CGRect(x: sender.frame.origin.x-175, y: sender.frame.origin.y-170, width: 380, height: 200))
+                }else{
+                    captionView = customPopup(frame: CGRect(x: sender.frame.origin.x-145, y: sender.frame.origin.y-170, width: 380, height: 200))
+                }
+                
                 if UIDevice.current.userInterfaceIdiom == .phone {
                 scrollView.setContentOffset(
                     CGPoint(x: captionView.frame.origin.x, y: 0),
