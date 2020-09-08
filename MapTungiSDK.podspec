@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "MapTungiSDK"
-  spec.version      = "0.0.9"
+  spec.version      = "0.1.0"
   spec.summary      = "To integarte Map Tungi SDK with Club Mahindra App."
 
   # This description is used to generate tags and improve search results.
@@ -67,7 +67,7 @@ Pod::Spec.new do |spec|
   # spec.platform     = :ios
   # spec.platform     = :ios, "5.0"
   
-  spec.ios.deployment_target = "10.0"
+  spec.ios.deployment_target = "9.0"
   spec.swift_version = "4.0"
 
   #  When using multiple platforms
